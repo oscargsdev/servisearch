@@ -10,3 +10,10 @@ class IndexView(generic.ListView):
 
     def get_queryset(self):
         return Worker.objects.all()
+    
+class DetailView(generic.DetailView):
+    model = Worker
+    template_name = 'classified/detail.html'
+
+    def get_queryset(self):
+        return Worker.objects.all()

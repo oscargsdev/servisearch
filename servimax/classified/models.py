@@ -25,7 +25,7 @@ class Worker(User):
 
 class Employer(User):
     def __str__(self):
-        return self.first_name + ': Employer'
+        return self.first_name + ' ' + self.last_name
     
 class Contract(models.Model):
     employer = models.ForeignKey(Employer, on_delete=models.CASCADE)

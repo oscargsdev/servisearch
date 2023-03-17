@@ -2,9 +2,23 @@
 
 <ul>
     {% for worker in workers_list %}
-    <li>
-        {{worker.first_name}}
-    </li>
+    <div>
+        <h2><a href="{% url 'classified:detail' worker.id%} ">{{ worker.first_name }} {{ worker.last_name }}</a></h2>
+        <div>{{ worker.type }}</div>
+        <div>${{ worker.hourly_rate }} /hr</div>
+
+        
+
+        {% comment %} {% for opinion in worker.opinion_set.all %}
+        <div>{{ opinion.rating }}: {{ opinion.op }}</div>
+        
+        {% endfor %} {% endcomment %}
+
+        
+        
+
+        <br>
+    </div>
     {% endfor %}
     
 </ul>

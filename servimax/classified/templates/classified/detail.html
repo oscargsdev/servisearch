@@ -1,0 +1,13 @@
+<h1>{{ worker.first_name }} {{ worker.last_name}}</h1>
+<div>Type of service: {{ worker.type }}</div>
+<div>Hourly rate: {{ worker.hourly_rate }}</div>
+
+<h2>Opinions</h2>
+
+{% comment %} {{Employer.objects.all()}} {% endcomment %}
+{% for opinion in worker.opinion_set.all %}
+    <div>{{ opinion.employer }}</div>
+    <div>Rating: {{ opinion.rating }}/5</div>
+    <div>{{ opinion.op }}</div>
+    <br>
+{% endfor %}
