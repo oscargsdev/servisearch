@@ -1,0 +1,12 @@
+{% if workers_list %}
+
+<ul>
+    {% for worker in workers_list %}
+    <li>
+        {{worker.first_name}}
+    </li>
+    {% endfor %}
+    
+</ul>
+
+{% endif %}
