@@ -38,7 +38,8 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
 
-    "classified.apps.ClassifiedConfig"
+    "classified.apps.ClassifiedConfig",
+    "members.apps.MembersConfig"
 ]
 
 MIDDLEWARE = [
