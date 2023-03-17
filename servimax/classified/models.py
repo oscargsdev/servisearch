@@ -32,3 +32,9 @@ class Contract(models.Model):
     worker = models.ForeignKey(Worker, on_delete=models.CASCADE)
     date = models.DateField()
     rate = models.FloatField()
+    
+class Opinion(models.Model):
+    employer = models.ForeignKey(Employer, on_delete=models.CASCADE)
+    worker = models.ForeignKey(Worker, on_delete=models.CASCADE)
+    rating = models.IntegerField()
+    op = models.CharField(max_length=1000)
