@@ -1,7 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse
 from django.views import generic
-from .models import Worker
+from .models import Worker, Employer
 
 # Create your views here.
 class IndexView(generic.ListView):
@@ -17,3 +17,22 @@ class DetailView(generic.DetailView):
 
     def get_queryset(self):
         return Worker.objects.all()
+    
+
+def register(request):
+    return render(request, 'classified/register.html')
+
+def success(request):
+    user = Employer.objects.create(
+            first_name = request.POST['first_name'],
+            last_name = request.POST['last_name'],
+            email = request.POST['email'],
+            phone_number = request.POST['phone_number']
+        )
+    user.save()
+
+    return HttpResponse("Registro exitoso")
+
+    
+
+    

@@ -1,0 +1,22 @@
+<form action="{%url 'classified:success'%}" method="POST">
+    {% csrf_token %}
+    <fieldset>
+        <legend>Registrar usuario</legend>
+        <label for="fir">Nombre</label>
+        <input type="text" name="first_name">
+
+        <label for="las">Apellidos</label>
+        <input type="text" name="last_name">
+
+        <label for="email">Email</label>
+        <input type="text" name="email">\
+
+        <label for="phone_numbre">No. de telefono</label>
+        <input type="text" name="phone_number">
+
+        
+        
+    </fieldset>
+
+    <input type="submit" value="Registrar">
+</form>
